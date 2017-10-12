@@ -1,5 +1,9 @@
 image: node:latest
 
+.docker: &docker
+  tags:
+  - docker
+
 before_script:
   - npm install
 
@@ -14,18 +18,21 @@ stages:
 
 # Verify it can build.
 build:
+  <<: *docker
   stage: build
   script:
     - npm run build
 
 # Verify it passes linting.
 test:lint:
+  <<: *docker
   stage: test
   script:
     - npm run lint
 
 # Push to GITHUB
 deploy:github:
+  <<: *docker
   stage: deploy
   only:
     - tags
@@ -44,6 +51,7 @@ deploy:github:
 
 # Push to NPM
 deploy:npm:
+  <<: *docker
   stage: deploy
   only:
     - tags
