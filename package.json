@@ -12,7 +12,7 @@
     "build:es5": "tsc -p tsconfig.es5.json",
     "build:es6": "tsc -p tsconfig.es6.json",
     "prebuild": "rimraf dist",
-    "postbuild": "cp package.json dist/package.json",
+    "postbuild": "cp package.json README.md LICENSE COPYRIGHT dist",
     "lint": "tslint --type-check --project tsconfig.json src/**/*.ts",
     "dist": "cd dist && npm publish",
     "doc": "npm run doc:clean && npm run doc:generate",
