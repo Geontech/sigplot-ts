@@ -36,7 +36,6 @@ deploy:github:
   stage: deploy
   only:
     - tags
-    - master
   script:
     # Setup ssh with the key and trust the destination.
     - eval $(ssh-agent -s)
@@ -48,7 +47,7 @@ deploy:github:
     - git config user.name "${GITHUB_USER_NAME}"
     - git config user.email "${GITHUB_USER_EMAIL}"
     - git remote set-url origin ${GITHUB_REPO}
-    - git push origin master --follow-tags
+    - git push origin ${CI_COMMIT_REF_NAME} --follow-tags
 
 # Push to NPM
 deploy:npm:
@@ -56,7 +55,6 @@ deploy:npm:
   stage: deploy
   only:
     - tags
-    - master
   script:
     # Build the library, publish dist.
     - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
