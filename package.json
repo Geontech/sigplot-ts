@@ -1,0 +1,42 @@
+{
+  "author": "Thomas Goodwin <btgoodwin@geontech.com>",
+  "license": "GPL-3.0",
+  "name": "sigplot-ts",
+  "version": "0.0.0",
+  "description": "TypeScript-based Integration Library for SigPlot 2.0",
+  "main": "./index.js",
+  "module": "./esm/index.js",
+  "typings": "./index.d.ts",
+  "scripts": {
+    "build": "npm run build:es5 && npm run build:es6",
+    "build:es5": "tsc -p tsconfig.es5.json",
+    "build:es6": "tsc -p tsconfig.es6.json",
+    "prebuild": "rimraf dist",
+    "postbuild": "cp package.json dist/package.json",
+    "lint": "tslint --type-check --project tsconfig.json src/**/*.ts",
+    "dist": "cd dist && npm publish",
+    "doc": "npm run doc:clean && npm run doc:generate",
+    "doc:clean": "rimraf doc",
+    "doc:generate": "typedoc --options typedoc.json --out doc src/lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/geontech/sigplot-ts.git"
+  },
+  "keywords": [
+    "sigplot",
+    "typescript"
+  ],
+  "dependencies": {
+    "sigplot": "git://github.com/geontech/sigplot.git#develop-2.0-ts"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.19",
+    "rimraf": "^2.6.1",
+    "ts-loader": "^2.3.2",
+    "ts-node": "^3.3.0",
+    "tslint": "~4.5.0",
+    "typedoc": "^0.8.0",
+    "typescript": "^2.4.2"
+  }
+}
