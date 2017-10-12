@@ -41,7 +41,7 @@ deploy:github:
     - eval $(ssh-agent -s)
     - echo "${GITHUB_TOKEN}" | ssh-add -
     - mkdir -p ~/.ssh
-    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config"
+    - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
 
     # (Re)configure git and push w/ tags.
     - git config user.name "${GITHUB_USER_NAME}"
@@ -57,6 +57,6 @@ deploy:npm:
     - tags
   script:
     # Build the library, publish dist.
-    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
     - npm run build
     - npm run dist
