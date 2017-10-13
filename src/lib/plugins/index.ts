@@ -4,6 +4,6 @@
  *
  * Re-exports from sigplot.plugins module for downstream interfaces
  */
-export * from './accordion';
-export * from './annotations';
-export * from './boxes';
+export * from './accordion/index';
+export * from './annotations/index';
+export * from './boxes/index';

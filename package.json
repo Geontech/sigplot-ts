@@ -27,7 +27,7 @@
     "sigplot",
     "typescript"
   ],
-  "dependencies": {
+  "peerDependencies": {
     "sigplot": "git://github.com/geontech/sigplot.git#develop-2.0-ts"
   },
   "devDependencies": {

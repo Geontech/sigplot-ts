@@ -2,10 +2,11 @@
  * Author:  Thomas Goodwin
  * Company: Geon Technologies, LLC
  */
+import { FormatSize, FormatType, format } from './format/index';
+import { Units } from '../m/index';
+
 import { IBlueHeaderOptions } from './bluefile';
-import { FormatSize, FormatType, format } from './format';
 import { AxisData } from './axis-data';
-import { Units } from '../m';
 
 /**
  * Sometimes called 'hdrmod' and 'overrides' for various sigplot.Plot() methods,

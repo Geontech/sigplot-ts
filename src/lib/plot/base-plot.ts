@@ -7,9 +7,9 @@
 
 import * as sigplot from 'sigplot';
 
-import { FormatSize, FormatType } from '../bluefile';
-import { ILayer } from '../layer';
-import { Units } from '../m';
+import { FormatSize, FormatType } from '../bluefile/index';
+import { ILayer } from '../layer/index';
+import { Units } from '../m/index';
 
 import { IConstructorOptions, ISettingsOptions } from './sigplot';
 import { ConstructorOptions } from './constructor-options';

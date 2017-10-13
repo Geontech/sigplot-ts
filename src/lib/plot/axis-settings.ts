@@ -4,7 +4,7 @@
  *
  * Axis Settings
  */
-import { AutoScale } from './enums';
+import { AutoScale } from './enums/index';
 
 /**
  * Interface to collect settings related to an axis of the plot.

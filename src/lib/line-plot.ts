@@ -4,9 +4,9 @@
  *
  * Generic 1D line plot with highlight capabilities, etc.
  */
-import { ILayerSettings } from './layer';
-import { IHighlight, Layer1D } from './layer1d';
-import { BasePlot, IConstructorOptions } from './plot';
+import { ILayerSettings } from './layer/index';
+import { IHighlight, Layer1D } from './layer1d/index';
+import { BasePlot, IConstructorOptions } from './plot/index';
 
 import {
     AxisData,
@@ -14,7 +14,7 @@ import {
     FormatSize,
     FormatType,
     IBlueHeaderOptions
-} from './bluefile';
+} from './bluefile/index';
 
 const DEFAULT_SIGNAL = 'signal';
 

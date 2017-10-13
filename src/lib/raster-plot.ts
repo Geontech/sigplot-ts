@@ -5,14 +5,14 @@
  * Generic raster plot
  */
 
-import { Layer2D } from './layer2d';
-import { BasePlot, ConstructorOptions } from './plot';
+import { Layer2D } from './layer2d/index';
+import { BasePlot, ConstructorOptions } from './plot/index';
 import {
     AxisData,
     BlueHeaderOptions,
     FormatSize,
     FormatType
-} from './bluefile';
+} from './bluefile/index';
 
 const DEFAULT_SIGNAL = 'signal';
 
