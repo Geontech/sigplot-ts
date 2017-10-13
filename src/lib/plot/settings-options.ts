@@ -10,7 +10,7 @@ import {
   IPlotColors
 } from './sigplot';
 
-import { Mc, IColorMap } from '../m';
+import { Mc, IColorMap } from '../m/index';
 
 import {
   AutoScale,
@@ -20,7 +20,7 @@ import {
   RubberboxAction,
   RubberboxMode,
   XCNT
-} from './enums';
+} from './enums/index';
 
 /**
  * SettingsOptions are the runtime settings used in SigPlot's top-level Plot.

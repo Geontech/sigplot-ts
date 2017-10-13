@@ -2,7 +2,7 @@
  * Author:  Thomas Goodwin
  * Company: Geon Technologies, LLC
  */
-import { Units } from '../m';
+import { Units } from '../m/index';
 
 /**
  * Interface for collecting axis data together to reduce the number of

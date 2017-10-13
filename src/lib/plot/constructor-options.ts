@@ -20,9 +20,9 @@ import {
   RubberboxAction,
   RubberboxMode,
   XCNT
-} from './enums';
+} from './enums/index';
 
-import { Units } from '../m';
+import { Units } from '../m/index';
 
 /**
  * A helper class that implements enumerated interfaces where possible, etc.

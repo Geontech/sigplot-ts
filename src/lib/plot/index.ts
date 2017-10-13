@@ -34,4 +34,4 @@ export {
     RubberboxAction,
     RubberboxMode,
     XCNT
-} from './enums';
+} from './enums/index';
