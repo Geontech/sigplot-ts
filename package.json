@@ -15,9 +15,9 @@
     "postbuild": "cp package.json README.md LICENSE COPYRIGHT dist",
     "lint": "tslint --type-check --project tsconfig.json src/**/*.ts",
     "dist": "cd dist && npm publish",
-    "doc": "npm run doc:clean && npm run doc:generate",
-    "doc:clean": "rimraf doc",
-    "doc:generate": "typedoc --options typedoc.json --out doc src/lib"
+    "docs": "npm run docs:clean && npm run docs:generate",
+    "docs:clean": "rimraf docs",
+    "docs:generate": "typedoc --options typedoc.json --out docs src/lib"
   },
   "repository": {
     "type": "git",
