@@ -14,6 +14,7 @@ import { Units } from '../m/index';
 import { IConstructorOptions, ISettingsOptions } from './sigplot';
 import { ConstructorOptions } from './constructor-options';
 import { SettingsOptions } from './settings-options';
+import { PlotData } from './plot-data';
 
 /**
  * BasePlot is an abstract base class for sigplot.Plot to help unify some of the
@@ -68,11 +69,7 @@ export abstract class BasePlot {
     /**
      * Update the plot with the data buffer
      */
-    abstract push (
-        buffer:  any[],
-        size?:   FormatSize,
-        type?:   FormatType,
-        ...args: any[]);
+    abstract push (plotData: PlotData, ...args: any[]);
 
     /** Get the plot layer for the data */
     abstract getLayer(...args: any[]): ILayer;

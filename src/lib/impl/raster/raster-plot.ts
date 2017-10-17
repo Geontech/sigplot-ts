@@ -5,14 +5,16 @@
  * Generic raster plot
  */
 
-import { Layer2D } from './layer2d/index';
-import { BasePlot, ConstructorOptions } from './plot/index';
+import { Layer2D } from '../../layer2d/index';
+import { BasePlot, ConstructorOptions } from '../../plot/index';
 import {
     AxisData,
     BlueHeaderOptions,
     FormatSize,
     FormatType
-} from './bluefile/index';
+} from '../../bluefile/index';
+
+import { RasterPlotData } from './raster-plot-data';
 
 const DEFAULT_SIGNAL = 'signal';
 
@@ -39,23 +41,19 @@ export class RasterPlot extends BasePlot {
     }
 
     /**
-     * Push data to the plot
-     * @param buffer - Data to Plot
-     * @param size - Size/Shape of the data (complex, real, etc.)
-     * @param type - Data Type of the buffer (int8, etc.)
-     * @param xAxis - Description of the X-axis for the plot
-     * @param yAxis - Description of the Y-axis for the plot
-     * @param dataId - ID uniquely representing the data.
+     * Push the data buffer and other information to the plot.
+     * @param plotData - buffer and parameters to plot
      */
-    push(
-        buffer: any[],
-        size:    FormatSize = FormatSize.Scalar,
-        type:    FormatType = FormatType.Float32,
-        xAxis:   AxisData = {},
-        yAxis:   AxisData = {},
-        dataId:  string = DEFAULT_SIGNAL
-        ) {
-        const options = BlueHeaderOptions.type2000(size, type, xAxis, yAxis, buffer.length);
+    push(plotData: RasterPlotData) {
+        if (plotData.dataId === undefined) {
+            plotData.dataId = DEFAULT_SIGNAL;
+        }
+        const options = BlueHeaderOptions.type2000(
+            plotData.dataSize,
+            plotData.dataType,
+            plotData.xAxis,
+            plotData.yAxis,
+            plotData.buffer.length);
 
         if (!this.getLayer()) {
             this._layerN = this._plot.overlay_pipe(options);
@@ -67,10 +65,10 @@ export class RasterPlot extends BasePlot {
         // it's 'name', which is the internal name that will appear on the 
         // legend.
         const layer = this.getLayer();
-        layer.name = dataId;
+        layer.name = plotData.dataId;
 
         // Adjust the plot for the data length and push to the plot
         // TODO: sync and/or rsync?
-        this._plot.push(this._layerN, buffer, options);
+        this._plot.push(this._layerN, plotData.buffer, options);
     }
 }

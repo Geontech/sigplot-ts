@@ -4,17 +4,18 @@
  *
  * Generic 1D line plot with highlight capabilities, etc.
  */
-import { ILayerSettings } from './layer/index';
-import { IHighlight, Layer1D } from './layer1d/index';
-import { BasePlot, IConstructorOptions } from './plot/index';
-
+import { ILayerSettings } from '../../layer/index';
+import { IHighlight, Layer1D } from '../../layer1d/index';
+import { BasePlot, IConstructorOptions } from '../../plot/index';
 import {
     AxisData,
     BlueHeaderOptions,
     FormatSize,
     FormatType,
     IBlueHeaderOptions
-} from './bluefile/index';
+} from '../../bluefile/index';
+
+import { LinePlotData } from './line-plot-data';
 
 const DEFAULT_SIGNAL = 'signal';
 
@@ -50,25 +51,26 @@ export class LinePlot extends BasePlot {
     private _dataLayers: DataLayers = {};
 
     /**
-     * Push the data buffer to the plot.
-     * @param buffer - Data to Plot
-     * @param size - Size/Shape of the data (complex, real, etc.)
-     * @param type - Data Type of the buffer (int8, etc.)
-     * @param xAxis - Description of the X-axis for the plot
-     * @param dataId - ID uniquely representing the data.
+     * Push the data buffer and other information to the plot.
+     * @param plotData - buffer and parameters to plot
      */
-    push(
-        buffer: any[],
-        size:   FormatSize = FormatSize.Complex,
-        type:   FormatType = FormatType.Float32,
-        xAxis:  AxisData = {},
-        dataId: string = DEFAULT_SIGNAL
-        ) {
-        const options = BlueHeaderOptions.type1000(size, type, xAxis);
-        const dl = this.dataLayer(dataId, options, buffer.length);
+    push(plotData: LinePlotData) {
+        if (plotData.dataId === undefined) {
+            plotData.dataId = DEFAULT_SIGNAL;
+        }
+        const options = BlueHeaderOptions.type1000(
+            plotData.dataSize,
+            plotData.dataType,
+            plotData.xAxis);
+        const dl = this.dataLayer(plotData.dataId, options, plotData.buffer.length);
+
+        // If settings are provided, apply them.
+        if (plotData.layerSettings !== undefined) {
+            this.changeLayerSettings(plotData.layerSettings, plotData.dataId);
+        }
 
         // TODO: sync and/or rsync?
-        this._plot.push(dl.layerNumber, buffer, options);
+        this._plot.push(dl.layerNumber, plotData.buffer, options);
     }
 
     /**

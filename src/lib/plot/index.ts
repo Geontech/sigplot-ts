@@ -12,8 +12,9 @@ export { ConstructorOptions } from './constructor-options';
 export { SettingsOptions } from './settings-options';
 export { AxisSettings } from './axis-settings';
 
-// Basic plot
+// Basic plot and data
 export { BasePlot } from './base-plot';
+export { PlotData } from './plot-data';
 
 // From sigplot
 export {
