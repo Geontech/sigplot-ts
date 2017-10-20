@@ -2,7 +2,7 @@
   "author": "Thomas Goodwin <btgoodwin@geontech.com>",
   "license": "GPL-3.0",
   "name": "sigplot-ts",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "TypeScript-based Integration Library for SigPlot 2.0",
   "main": "./index.js",
   "module": "./esm/index.js",
