@@ -19,11 +19,25 @@ npm install --save sigplot-ts
 In your TypeScript environment, import and utilize the plot type of interest:
 
 ```typescript
-import { RasterPlot } from 'sigplot-ts';
+import {
+    RasterPlot,
+    RasterPlotData,
+    FormatSize,
+    FormatType
+} from 'sigplot-ts';
 
+// Somewhere in the application
 let plot = new RasterPlot(dom_element);
 
-plot.push(data_vector, ...);
+// Then when data is received
+const data: RasterPlotData = {
+    buffer: data_vector,
+    dataSize: FormatSize.Scalar,
+    dataType: FormatType.Float32
+};
+
+// Push the data
+plot.push(data);
 ```
 
  > **Important:** Your HTML `dom_element` must have a non-zero height set, otherwise SigPlot will not be displayed at all.  Once this is set, call `checkResize` on the plot instance to refresh the plot to the new dimensions.
