@@ -926,11 +926,25 @@ img { max-width: 100%; }
 </code></pre>
 			<h2 id="usage">Usage</h2>
 			<p>In your TypeScript environment, import and utilize the plot type of interest:</p>
-			<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { RasterPlot } <span class="hljs-keyword">from</span> <span class="hljs-string">'sigplot-ts'</span>;
+			<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> {
+    RasterPlot,
+    RasterPlotData,
+    FormatSize,
+    FormatType
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'sigplot-ts'</span>;
 
+<span class="hljs-comment">// Somewhere in the application</span>
 <span class="hljs-keyword">let</span> plot = <span class="hljs-keyword">new</span> RasterPlot(dom_element);
 
-plot.push(data_vector, ...);
+<span class="hljs-comment">// Then when data is received</span>
+<span class="hljs-keyword">const</span> data: RasterPlotData = {
+    buffer: data_vector,
+    dataSize: FormatSize.Scalar,
+    dataType: FormatType.Float32
+};
+
+<span class="hljs-comment">// Push the data</span>
+plot.push(data);
 </code></pre>
 			<blockquote>
 				<p><strong>Important:</strong> Your HTML <code>dom_element</code> must have a non-zero height set, otherwise SigPlot will not be displayed at all.  Once this is set, call <code>checkResize</code> on the plot instance to refresh the plot to the new dimensions.</p>
