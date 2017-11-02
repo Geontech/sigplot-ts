@@ -31,6 +31,9 @@ export class BlueHeaderOptions implements IBlueHeaderOptions {
     ydelta:  number;
     yunits:  Units;
 
+    /** Controls the size of the ArrayBuffer (default is 1 Mbyte) */
+    pipesize: number;
+
     subsize: number;
 
     private _formatSize: FormatSize;
