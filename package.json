@@ -15,9 +15,10 @@
     "postbuild": "cp package.json README.md LICENSE COPYRIGHT dist",
     "lint": "tslint --type-check --project tsconfig.json src/**/*.ts",
     "dist": "cd dist && npm publish",
-    "docs": "npm run docs:clean && npm run docs:generate",
+    "docs": "npm run docs:clean && npm run docs:generate && npm run docs:sanitize",
     "docs:clean": "rimraf docs",
-    "docs:generate": "typedoc --options typedoc.json --out docs src/lib"
+    "docs:generate": "typedoc --options typedoc.json --out docs src/lib",
+    "docs:sanitize": "sed -i 's|'$PWD'||g' $(find docs -type f)"
   },
   "repository": {
     "type": "git",
