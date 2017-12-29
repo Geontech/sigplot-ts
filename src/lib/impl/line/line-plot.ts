@@ -103,7 +103,7 @@ export class LinePlot extends BasePlot {
      */
     changeLayerSettings(settings: ILayerSettings, dataId: string = DEFAULT_SIGNAL) {
         let layer = this.getLayer(dataId);
-        if (layer !== undefined) {
+        if (layer !== null) {
             for (let k in settings) {
                 if (settings.hasOwnProperty(k)) {
                     layer[k] = settings[k];
@@ -119,7 +119,7 @@ export class LinePlot extends BasePlot {
      */
     addHighlight(highlight: IHighlight, dataId: string = DEFAULT_SIGNAL) {
         const l = this.getLayer(dataId);
-        if (l !== undefined) {
+        if (l !== null) {
             l.add_highlight(highlight);
         }
     }
@@ -131,7 +131,7 @@ export class LinePlot extends BasePlot {
      */
     removeHighlight(highlight: IHighlight, dataId: string = DEFAULT_SIGNAL) {
         const l = this.getLayer(dataId);
-        if (l !== undefined) {
+        if (l !== null) {
             l.remove_highlight(highlight);
         }
     }
@@ -142,7 +142,7 @@ export class LinePlot extends BasePlot {
      */
     clearHighlights(dataId: string = DEFAULT_SIGNAL) {
         const l = this.getLayer(dataId);
-        if (l !== undefined) {
+        if (l !== null) {
             l.clear_highlights();
         }
     }
@@ -168,8 +168,10 @@ export class LinePlot extends BasePlot {
 
             // Resize if the length of data changed.
             if (val.frameSize !== frameSize && frameSize !== undefined) {
-                this.getLayer(dataId)
-                    .change_settings({ framesize: frameSize });
+                const l = this.getLayer(dataId);
+                if (l !== null) {
+                  l.change_settings({ framesize: frameSize });
+                }
                 val.frameSize = frameSize;
             }
         } else {
