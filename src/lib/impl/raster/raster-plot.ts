@@ -35,7 +35,7 @@ export class RasterPlot extends BasePlot {
 
     /** Remove the SigPlot layer */
     removeLayer(): void {
-        if (this._plot.get_layer(this._layerN) !== undefined) {
+        if (this._plot.get_layer(this._layerN) !== null) {
             this._plot.remove_layer(this._layerN);
         }
     }
