@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>AxisData | sigplot-ts</title>
+	<title>SideFeature | sigplot-ts</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
@@ -910,16 +910,16 @@ img { max-width: 100%; }
 <nav class="tsd-navigation secondary">
 	<ul>
 		<li class="current tsd-kind-interface tsd-is-external">
-			<a href="axisdata.html" class="tsd-kind-icon">Axis<wbr>Data</a>
+			<a href="sidefeature.html" class="tsd-kind-icon">Side<wbr>Feature</a>
 			<ul>
 				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a href="axisdata.html#delta" class="tsd-kind-icon">delta</a>
+					<a href="sidefeature.html#linecap" class="tsd-kind-icon">line<wbr>Cap</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a href="axisdata.html#start" class="tsd-kind-icon">start</a>
+					<a href="sidefeature.html#linewidth" class="tsd-kind-icon">line<wbr>Width</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-					<a href="axisdata.html#units" class="tsd-kind-icon">units</a>
+					<a href="sidefeature.html#strokestyle" class="tsd-kind-icon">stroke<wbr>Style</a>
 				</li>
 			</ul>
 		</li>
@@ -930,20 +930,15 @@ img { max-width: 100%; }
 		<section class="tsd-panel tsd-comment">
 			<div class="tsd-comment tsd-typography">
 				<div class="lead">
-					<p>Interface for collecting axis data together to reduce the number of
-					parameters in the BlueHeaderOptions methods.</p>
+					<p>Describes how/what to draw for a side</p>
 				</div>
-				<dl class="tsd-comment-tags">
-					<dt>preferred</dt>
-					<dd></dd>
-				</dl>
 			</div>
 		</section>
 		<section class="tsd-panel tsd-hierarchy">
 			<h3>Hierarchy</h3>
 			<ul class="tsd-hierarchy">
 				<li>
-					<span class="target">AxisData</span>
+					<span class="target">SideFeature</span>
 				</li>
 			</ul>
 		</section>
@@ -954,9 +949,9 @@ img { max-width: 100%; }
 					<section class="tsd-index-section tsd-is-external">
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="axisdata.html#delta" class="tsd-kind-icon">delta</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="axisdata.html#start" class="tsd-kind-icon">start</a></li>
-							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="axisdata.html#units" class="tsd-kind-icon">units</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="sidefeature.html#linecap" class="tsd-kind-icon">line<wbr>Cap</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="sidefeature.html#linewidth" class="tsd-kind-icon">line<wbr>Width</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="sidefeature.html#strokestyle" class="tsd-kind-icon">stroke<wbr>Style</a></li>
 						</ul>
 					</section>
 				</div>
@@ -965,34 +960,39 @@ img { max-width: 100%; }
 		<section class="tsd-panel-group tsd-member-group tsd-is-external">
 			<h2>Properties</h2>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-				<a name="delta" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagOptional">Optional</span> delta</h3>
-				<div class="tsd-signature tsd-kind-icon">delta<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<a name="linecap" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> line<wbr>Cap</h3>
+				<div class="tsd-signature tsd-kind-icon">line<wbr>Cap<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"butt"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"round"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"square"</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in bluefile/axis-data.ts:14</li>
+						<li>Defined in plugins/boxes2/side-feature.ts:8</li>
 					</ul>
 				</aside>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-				<a name="start" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagOptional">Optional</span> start</h3>
-				<div class="tsd-signature tsd-kind-icon">start<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<a name="linewidth" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> line<wbr>Width</h3>
+				<div class="tsd-signature tsd-kind-icon">line<wbr>Width<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in bluefile/axis-data.ts:13</li>
+						<li>Defined in plugins/boxes2/side-feature.ts:7</li>
 					</ul>
 				</aside>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
-				<a name="units" class="tsd-anchor"></a>
-				<h3><span class="tsd-flag ts-flagOptional">Optional</span> units</h3>
-				<div class="tsd-signature tsd-kind-icon">units<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Units.None</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.Time</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.Delay</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.Frequency</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.TimeCode</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.Distance</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.Speed</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.Acceleration</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.JerkMSec3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.Doppler</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.DopplerRate</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.Energy</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.Power</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.Mass</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.Volume</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.AngularPower</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.IntegratedPowerWrad</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.SpatialPower</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.IntegratedPowerWm</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.SpectralPower</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.Amplitude</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.Real</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.Imaginary</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.PhaseRad</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.PhaseDeg</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.PhaseCyc</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.Log10</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.Log20</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.Magnitude</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.Unknown1</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.Unknown2</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.General</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.Counts</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.AngleRad</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.AngleDeg</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.RelativePowerdB</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.RelativePowerdBm</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.RelativePowerdBW</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.SolidAngle</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.DistanceFt</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.DistanceNmi</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.SpeedFtSec</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.SpeedNmiSec</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.SpeedNmiHr</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.AccelerationFtSec2</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.AccelerationNmiSec2</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.AccelerationKnotsSec</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.AccelerationG</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.JerkGSec</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.RotationRPS</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.RotationRPM</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.AngularVelocityRadSec</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.AngularVelocityDegSec</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.AngularAccelerationRadSec2</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.AngularAccelerationDegSec2</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.Latitude</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.Longitude</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.AltitudeFt</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Units.AltitudeM</span></div>
+				<a name="strokestyle" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagOptional">Optional</span> stroke<wbr>Style</h3>
+				<div class="tsd-signature tsd-kind-icon">stroke<wbr>Style<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in bluefile/axis-data.ts:15</li>
+						<li>Defined in plugins/boxes2/side-feature.ts:6</li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Stroke style (color string, gradient, or pattern)</p>
+					</div>
+				</div>
 			</section>
 		</section>
 		<footer class="with-border-bottom">
