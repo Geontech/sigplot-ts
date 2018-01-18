@@ -18,7 +18,7 @@
     "docs": "npm run docs:clean && npm run docs:generate && npm run docs:sanitize",
     "docs:clean": "rimraf docs",
     "docs:generate": "typedoc --options typedoc.json --out docs src/lib",
-    "docs:sanitize": "sed -i 's|'$PWD'||g' $(find docs -type f)"
+    "docs:sanitize": "find docs -type f -name '*.htm*' -exec sed -i '' 's|'$PWD'||g' {} +"
   },
   "repository": {
     "type": "git",
