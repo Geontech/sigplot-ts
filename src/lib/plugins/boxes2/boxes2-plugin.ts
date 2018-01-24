@@ -143,6 +143,10 @@ export class Boxes2Plugin {
 
         // Get context, and ensure we don't draw outside
         const ctx = canvas.getContext('2d');
+        ctx.save();
+        ctx.beginPath();
+        ctx.rect(Mx.l, Mx.t, Mx.r - Mx.l, Mx.b - Mx.t);
+        ctx.clip();
 
         let x: number;
         let y: number;
@@ -227,9 +231,9 @@ export class Boxes2Plugin {
                 ctx.fillText(box.text.value, x, y);
             }
         });
-        // Clip
-        ctx.rect(Mx.l, Mx.t, Mx.r - Mx.l, Mx.b - Mx.t);
-        ctx.clip();
+
+        // Restore
+        ctx.restore();
     }
 
     dispose(): void {
