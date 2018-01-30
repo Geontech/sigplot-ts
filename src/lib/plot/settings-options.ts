@@ -57,6 +57,7 @@ export class SettingsOptions {
   /** Enables/disables the mouse cursor being a cross(hair) */
   cross:        boolean;
 
+  wheelscroll_enable: boolean;
   wheelscroll_mode_natural: string;
   wheelZoom:                boolean;
   wheelZoomPercent:         number;
