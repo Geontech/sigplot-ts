@@ -53,7 +53,9 @@ export class RasterPlot extends BasePlot {
             plotData.dataType,
             plotData.xAxis,
             plotData.yAxis,
-            plotData.buffer.length);
+            plotData.buffer.length,
+            plotData.timeCode
+        );
 
         if (!this.getLayer()) {
             this._layerN = this._plot.overlay_pipe(options);

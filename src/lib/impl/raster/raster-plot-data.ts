@@ -13,4 +13,7 @@ import { PlotData } from '../../plot/index';
 export interface RasterPlotData extends PlotData {
     /** Y-Axis data description */
     yAxis?: AxisData;
+
+    /** Time Code */
+    timeCode?: number;
 }
