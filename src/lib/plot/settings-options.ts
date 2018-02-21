@@ -49,6 +49,7 @@ export class SettingsOptions {
   show_y_axis:  boolean;
   show_readout: boolean;
   specs:        boolean;
+  show_axis_on_plot: boolean;
   legend:       boolean;
 
   /** Controls visibility of scroll bars */
