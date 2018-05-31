@@ -29,7 +29,7 @@
     "typescript"
   ],
   "dependencies": {
-    "sigplot": "git://github.com/geontech/sigplot.git#develop-2.0-rebase"
+    "sigplot": "git://github.com/geontech/sigplot.git"
   },
   "devDependencies": {
     "@types/node": "^8.0.19",
