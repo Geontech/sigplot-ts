@@ -67,6 +67,7 @@ export class LinePlot extends BasePlot {
         // If settings are provided, apply them.
         if (plotData.layerSettings !== undefined) {
             this.changeLayerSettings(plotData.layerSettings, plotData.dataId);
+            // console.log(plotData.xAxis);
         }
 
         // TODO: sync and/or rsync?
